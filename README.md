@@ -1,2 +1,0 @@
-### Campus Connect
-Hi there!!
