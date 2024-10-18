@@ -12,10 +12,10 @@ app.use(express.json());
 app.use(cors());
 
 const db = new pg.Client({
-    user:"avnadmin",
-    host:"pg-roy-roystonad2004-ea09.i.aivencloud.com",
+    user:"",
+    host:"",
     database:"authenticate",
-    password:"AVNS_eoTuy694UJP_rLlhUjl",
+    password:"",
     port:18661,
 })
 
