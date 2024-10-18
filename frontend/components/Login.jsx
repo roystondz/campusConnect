@@ -1,24 +1,30 @@
-import React ,{useState} from "react";
+import {useState} from "react";
 
 const Login = () => {
 
     const [inputData,setInputData] = useState('');
     const [inputPassword,setInputPassword] =useState('');
 
-    const handleInputChange = (e) =>{
+    const handleInputChangeUsername = (e) =>{
         setInputData(e.target.value);
-        setInputPassword(e.target.value);
+        
     } 
+    const handleInputChangePassword=(e)=>{
+        setInputPassword(e.target.value);
+    }
     const handleSubmit=async (e)=>{
         e.preventDefault();
-    
+        const data = {
+            username: inputData,
+            password: inputPassword
+        };
 
     await fetch('http://localhost:3000/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username: inputData },{password:inputPassword}),  // Send data to the server
+        body: JSON.stringify(data),  // Send data to the server
       });
     };
 
@@ -26,8 +32,8 @@ const Login = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={inputData} onChange={handleInputChange} placeholder="Enter username" />
-        <input type="password" value={inputData} onChange={handleInputChange} placeholder="Enter username" />
+        <input type="text" value={inputData} onChange={handleInputChangeUsername} placeholder="Enter username" />
+        <input type="password" value={inputPassword} onChange={handleInputChangePassword} placeholder="Enter username" />
         <button type="submit">Submit</button>
       </form>
     </div>
