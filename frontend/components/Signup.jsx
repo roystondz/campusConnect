@@ -1,7 +1,9 @@
 import { useState } from "react";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,19 +20,25 @@ const Signup = () => {
       alert("Passwords don't match");
       return;
     }
-    await fetch('http://localhost:3000/signup', {
+    const response = await fetch('https://campus-connect-lake-theta.vercel.app/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, email, password }),
     });
+    const data = await response.json();
+    if (response.ok && data.success) {
+      navigate('/Dashboard'); // Correct spelling from 'Dasboard' to 'Dashboard'
+    } else {
+      alert(data.error || "Signup failed"); // Display error message from response
+}
   };
 
     
 
   return (
-    <div className="flex items-start justify-center min-h-screen bg-purple-100 dark:bg-gray-800 pt-12"> {/* Added padding-top */}
+    <div className="flex items-start justify-center min-h-screen pt-12 bg-purple-100 dark:bg-gray-800"> {/* Added padding-top */}
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md dark:bg-gray-700">
         <h2 className="mb-6 text-2xl font-bold text-center text-gray-900 dark:text-white">Create an Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
