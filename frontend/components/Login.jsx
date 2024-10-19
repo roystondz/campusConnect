@@ -25,11 +25,15 @@ const Login = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={inputData} onChange={handleInputChange} placeholder="Enter username" />
-        <input type="password" value={inputData} onChange={handleInputChange} placeholder="Enter username" />
-        <button type="submit">Submit</button>
-      </form>
+      <div className="flex justify-center items-center h-screen bg-gray-100">
+  <div className="bg-white p-8 rounded shadow-md">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <input type="text" value={inputData} onChange={handleInputChange} placeholder="Enter username" className="w-full px-3 py-2 border rounded" />
+      <input type="password" value={inputPassword} onChange={handleInputChange} placeholder="Enter password" className="w-full px-3 py-2 border rounded" />
+      <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Submit</button>
+    </form>
+  </div>
+</div>
     </div>
   )
 }
