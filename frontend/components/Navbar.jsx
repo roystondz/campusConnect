@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../assets/logo.png";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,12 +34,12 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full px-4">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
         {/* Logo */}
         <a href="/">
           <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-            <img src="" width="32" alt="" height="32" className="w-8" />
+            <img src={logo} width="32" alt="" height="32" className="w-8" />
             <span>CampusConnect</span>
           </span>
         </a>
