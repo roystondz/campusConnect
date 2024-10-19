@@ -46,15 +46,23 @@ const Login = () => {
             placeholder="Enter password" 
             className="w-full px-3 py-2 border rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-500"
           />
-          <h3 className="dark:text-zinc-300"><a href=""></a>Forgot Password?</h3>
+          <div className="text-right">
+            <a href="" className="text-xs sm:text-sm font-medium text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300">Forgot Password?</a>
+          </div>
           <button 
             type="submit" 
             className="w-full py-2 text-white transition-colors duration-300 bg-purple-500 rounded-md hover:bg-purple-600"
           >
             
             Submit </button>
-            <Link to="/Signup">New User</Link>
+            
         </form>
+        <p className="mt-4 text-sm text-center text-gray-600 dark:text-gray-300">
+          Newbiee?{" "}
+          <a href="#" className="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300">
+            <Link to='/Signup'>Register Now</Link>
+          </a>
+        </p>
       </div>
     </div>
   );
