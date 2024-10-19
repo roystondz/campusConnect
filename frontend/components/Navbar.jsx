@@ -1,9 +1,21 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
     <div className="w-full">
@@ -16,17 +28,31 @@ export const Navbar = () => {
           </span>
         </a>
 
-        {/* Get Started */}
-        <div className="gap-3 ml-auto mr-2 nav__item lg:flex lg:ml-0 lg:order-2">
-          
-          <div className="hidden mr-3 lg:flex nav__item">
-            <a href="/" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
-              Get Started
-            </a>
-          </div>
+        {/* Desktop Menu */}
+        <div className="hidden text-center lg:flex lg:items-center">
+          <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
+            {navigation.map((menu, index) => (
+              <li className="mr-3 nav__item" key={index}>
+                <a
+                  href="/"
+                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                >
+                  {menu}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Dark Mode Toggle Button */}
+          <button
+            onClick={toggleDarkMode}
+            className="ml-4 px-4 py-2 text-white transition-colors duration-300 rounded-md shadow-md bg-lightPurple-500 dark:bg-darkPurple-500 hover:bg-lightPurple-600 dark:hover:bg-darkPurple-600"
+          >
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
         </div>
 
-        {/* Disclosure Menu */}
+        {/* Disclosure Menu for Mobile */}
         <button
           aria-label="Toggle Menu"
           onClick={() => setIsOpen(!isOpen)}
@@ -64,28 +90,9 @@ export const Navbar = () => {
                 {item}
               </a>
             ))}
-            <a href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
-              Get Started
-            </a>
           </div>
         )}
-
-        {/* Desktop Menu */}
-        <div className="hidden text-center lg:flex lg:items-center">
-          <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
-            {navigation.map((menu, index) => (
-              <li className="mr-3 nav__item" key={index}>
-                <a
-                  href="/"
-                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
-                >
-                  {menu}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
       </nav>
-</div>
-);
+    </div>
+  );
 };
