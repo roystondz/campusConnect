@@ -11,15 +11,7 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
-const db = new pg.Client({
-    user:"",
-    host:"",
-    database:"authenticate",
-    password:"",
-    port:18661,
-})
 
-db.connect();
 
 app.post('/submit', (req, res) => {
   const {username,password} = req.body;
