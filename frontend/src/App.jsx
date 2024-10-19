@@ -4,6 +4,7 @@ import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
 import Login from "../components/Login";
 import Signup from  "../components/Signup";
 import  Home from "../components/Home";
+import { Navbar } from '../components/Navbar';
 
 
 
@@ -40,6 +41,7 @@ export default function App() {
       <div className="pt-16"> {/* Add padding to the top to prevent overlap with the button */}
       
       <Router>
+      <Navbar/>  
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
