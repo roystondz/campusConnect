@@ -38,15 +38,14 @@ export default function App() {
         </button>
       </div>
       <div className="pt-16"> {/* Add padding to the top to prevent overlap with the button */}
-      <Router>
       
-      <Routes>
-      <Route path='/Login' element={<Login/>}/>
-      <Route path='/Signup' element={<Signup/>}/>
-      <Route path='/Home' element={<Home/>}/>
-      </Routes>
-
-      </Router>
+      <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </Router>
       </div>
     </div>
     
