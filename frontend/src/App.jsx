@@ -23,12 +23,8 @@ export default function App() {
   };
 
   return (
-    <Router>
-      
-          <Routes>
-          <Route path='/Login' element={<Login/>}/>
-          <Route path='/Signup' element={<Signup/>}/>
-    </Routes>
+    
+        
     <div className="relative min-h-screen transition-colors duration-300 bg-lightPurple-100 dark:bg-gray-800">
       <div className="absolute z-10 top-4 right-4">
         <button 
@@ -39,9 +35,17 @@ export default function App() {
         </button>
       </div>
       <div className="pt-16"> {/* Add padding to the top to prevent overlap with the button */}
-        <Login />
+      <Router>
+      
+      <Routes>
+      <Route path='/Login' element={<Login/>}/>
+      <Route path='/Signup' element={<Signup/>}/>
+      </Routes>
+
+      </Router>
       </div>
     </div>
-    </Router>
+    
+    
   );
 }

@@ -27,6 +27,8 @@ const Signup = () => {
     });
   };
 
+    
+
   return (
     <div className="flex items-center justify-center min-h-screen px-4 py-8 bg-purple-100 dark:bg-gray-800">
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md dark:bg-gray-700">
@@ -73,8 +75,8 @@ const Signup = () => {
         </form>
         <p className="mt-4 text-sm text-center text-gray-600 dark:text-gray-300">
           Already have an account?{" "}
-          <a href="#" className="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300">
-            <Link to='/Login'>Login in</Link>
+          <a className="text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300">
+            <Link to="/Login">Login</Link>
           </a>
         </p>
       </div>
