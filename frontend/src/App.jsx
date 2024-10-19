@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "../components/Login";
-import Signup from  "../components/Signup";
-import  Home from "../components/Home";
-
-
-
-
-
+import Signup from "../components/Signup";
+import Home from "../components/Home";
+/*
+import Navbar from "../components/Navbar";
+*/
 export default function App() {
-  
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -26,8 +22,6 @@ export default function App() {
   };
 
   return (
-    
-        
     <div className="relative min-h-screen transition-colors duration-300 bg-lightPurple-100 dark:bg-gray-800">
       <div className="absolute z-10 top-4 right-4">
         <button 
@@ -37,19 +31,18 @@ export default function App() {
           {darkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
       </div>
-      <div className="pt-16"> {/* Add padding to the top to prevent overlap with the button */}
-      <Router>
       
-      <Routes>
-      <Route path='/Login' element={<Login/>}/>
-      <Route path='/Signup' element={<Signup/>}/>
-      <Route path='/Home' element={<Home/>}/>
-      </Routes>
-
+      <Router>
+        
+        
+        <div className="pt-16">
+          <Routes>
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Signup' element={<Signup />} />
+            <Route path='/Home' element={<Home />} />
+          </Routes>
+        </div>
       </Router>
-      </div>
     </div>
-    
-    
   );
 }
