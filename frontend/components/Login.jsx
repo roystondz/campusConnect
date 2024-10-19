@@ -1,4 +1,6 @@
-import React ,{useState} from "react";
+import {useState} from "react";
+import Signup from "./Signup";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [inputData, setInputData] = useState('');
@@ -51,6 +53,7 @@ const Login = () => {
           >
             
             Submit </button>
+            <Link to="/Signup">New User</Link>
         </form>
       </div>
     </div>
