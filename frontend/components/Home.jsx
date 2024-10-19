@@ -1,4 +1,5 @@
-import img from './hero.png'
+import img from '../assets/hero.png'
+import {Link} from "react-router-dom";
 
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
                 target="_blank"
                 rel="noopener"
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md ">
-                Register Now
+                <Link to="/Signup" >Regsiter Now</Link>
               </a>
               <a
                 href=""
@@ -38,12 +39,12 @@ const Home = () => {
                   <title>Login</title>
 
                 </svg>
-                <span> Login if you already have an account</span>
+                <span> <Link to="/Login">Login if you already have an account</Link></span>
               </a>
             </div>
           </div>
         </div>
-        <div className="mt-12 flex items-center justify-center w-full lg:w-1/2">
+        <div className="flex items-center justify-center w-full mt-12 lg:w-1/2">
           <div className="">
             <img
               src={img}

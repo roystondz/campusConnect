@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "../components/Login";
-import Signup from "../components/Signup";
-import Home from "../components/Home";
-/*
-import Navbar from "../components/Navbar";
-*/
+import Signup from  "../components/Signup";
+import  Home from "../components/Home";
+import { Navbar } from '../components/Navbar';
+
+
+
+
+
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -31,18 +34,17 @@ export default function App() {
           {darkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
       </div>
+      <div className="pt-16"> {/* Add padding to the top to prevent overlap with the button */}
       
       <Router>
-        
-        
-        <div className="pt-16">
+      <Navbar/>  
           <Routes>
-            <Route path='/Login' element={<Login />} />
-            <Route path='/Signup' element={<Signup />} />
-            <Route path='/Home' element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
-        </div>
-      </Router>
+        </Router>
+      </div>
     </div>
   );
 }
