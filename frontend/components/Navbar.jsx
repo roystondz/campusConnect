@@ -7,8 +7,16 @@ export const Navbar = () => {
     const savedMode = localStorage.getItem("darkMode");
     return savedMode === "true"; // Convert string to boolean
   });
-  
-  const navigation = ["Our Clubs", "About Us", "Contact Us", "FAQs"];
+
+  // Update the navigation array to include paths
+  const navigation = [
+    { name: "Dashboard", path: "/Dashboard" },
+    { name: "Our Clubs", path: "/clubs" },
+    
+    { name: "About Us", path: "/about" },
+    { name: "Contact Us", path: "/contact" },
+    { name: "FAQs", path: "/faqs" },
+  ];
 
   useEffect(() => {
     if (darkMode) {
@@ -41,10 +49,10 @@ export const Navbar = () => {
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
                 <a
-                  href="/"
+                  href={menu.path} // Use the path from the menu object
                   className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
                 >
-                  {menu}
+                  {menu.name} {/* Use the name from the menu object */}
                 </a>
               </li>
             ))}
@@ -91,10 +99,10 @@ export const Navbar = () => {
             {navigation.map((item, index) => (
               <a
                 key={index}
-                href="/"
+                href={item.path} // Use the path from the menu object
                 className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
               >
-                {item}
+                {item.name} {/* Use the name from the menu object */}
               </a>
             ))}
           </div>
