@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import Login from "../components/Login";
+import Signup from  "../components/Signup";
+
+
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,7 +30,7 @@ export default function App() {
         </button>
       </div>
       <div className="pt-16"> {/* Add padding to the top to prevent overlap with the button */}
-        <Login />
+        <Signup />
       </div>
     </div>
   );
