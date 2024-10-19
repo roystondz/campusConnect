@@ -43,11 +43,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2">
+        <div className="mt-12 flex items-center justify-center w-full lg:w-1/2">
           <div className="">
-            <image
+            <img
               src={img}
-              width="61"
+              width="400"
               height="617"
               className={"object-cover"}
               alt="Hero Illustration"
