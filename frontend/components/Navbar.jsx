@@ -2,19 +2,26 @@ import { useState, useEffect } from "react";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-  const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
+  const [darkMode, setDarkMode] = useState(() => {
+    // Get the initial value from localStorage or default to false
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode === "true"; // Convert string to boolean
+  });
+  
+  const navigation = ["Our Clubs", "About Us", "Contact Us", "FAQs"];
 
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true"); // Save mode in localStorage
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("darkMode", "false"); // Save mode in localStorage
     }
   }, [darkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevMode) => !prevMode);
   };
 
   return (
@@ -23,8 +30,8 @@ export const Navbar = () => {
         {/* Logo */}
         <a href="/">
           <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-            <img src="/img/logo.svg" width="32" alt="N" height="32" className="w-8" />
-            <span>Nextly</span>
+            <img src="" width="32" alt="" height="32" className="w-8" />
+            <span>CampusConnect</span>
           </span>
         </a>
 
@@ -35,21 +42,21 @@ export const Navbar = () => {
               <li className="mr-3 nav__item" key={index}>
                 <a
                   href="/"
-                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
                 >
                   {menu}
                 </a>
               </li>
             ))}
-          </ul>
 
-          {/* Dark Mode Toggle Button */}
-          <button
-            onClick={toggleDarkMode}
-            className="ml-4 px-4 py-2 text-white transition-colors duration-300 rounded-md shadow-md bg-lightPurple-500 dark:bg-darkPurple-500 hover:bg-lightPurple-600 dark:hover:bg-darkPurple-600"
-          >
-            {darkMode ? "Light Mode" : "Dark Mode"}
-          </button>
+            {/* Dark Mode Toggle Button */}
+            <button
+              onClick={toggleDarkMode}
+              className="ml-4 px-4 py-2 text-white transition-colors duration-300 rounded-md shadow-md bg-lightPurple-500 dark:bg-darkPurple-500 hover:bg-lightPurple-600 dark:hover:bg-darkPurple-600"
+            >
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
+          </ul>
         </div>
 
         {/* Disclosure Menu for Mobile */}
