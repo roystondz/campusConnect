@@ -17,7 +17,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-lightPurple-100 dark:bg-darkPurple-900 transition-colors duration-300 relative">
+    <div className="min-h-screen bg-lightPurple-100 dark:bg-gray-800 transition-colors duration-300 relative">
       <div className="absolute top-4 right-4 z-10">
         <button 
           onClick={toggleDarkMode}
