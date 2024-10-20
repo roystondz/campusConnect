@@ -98,7 +98,7 @@ const Sidebar = () => {
             </li>
             <li>
               <a
-                href="/logout"
+                href="/login"
                 className="block p-3 rounded-lg bg-red-500 text-white hover:bg-red-600"
               >
                 <Link to="/Login">Logout</Link>

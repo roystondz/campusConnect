@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 
+
 export const Navbar = () => {
+
+  
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     // Get the initial value from localStorage or default to false
@@ -29,6 +32,9 @@ export const Navbar = () => {
     }
   }, [darkMode]);
 
+  // Conditionally add "Dashboard" if the user is authenticated
+  
+
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
   };
@@ -44,7 +50,6 @@ export const Navbar = () => {
           </span>
         </a>
 
-        {/* Desktop Menu */}
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (

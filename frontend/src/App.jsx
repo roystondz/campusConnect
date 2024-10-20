@@ -15,7 +15,7 @@ export default function App() {
       <TrailingCursor />
 
       <Router>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />
