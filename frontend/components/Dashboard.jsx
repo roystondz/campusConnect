@@ -1,54 +1,123 @@
-/*import React from 'react';*/
+
+import Sidebar from '../components/Sidebar'; // Assuming you have a Sidebar component
 
 const Dashboard = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Dashboard</h1>
+    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+      <Sidebar /> {/* Sidebar component */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {/* User Profile Overview */}
-        <div className="bg-purple-600 text-white shadow-md rounded-lg p-4">
-          <h2 className="text-xl font-semibold">Profile</h2>
-          <p>Name: User Name</p>
-          <p>Email: user@example.com</p>
-          <a href="/profile" className="text-yellow-200 hover:underline">Edit Profile</a>
+      <div className="flex-1 p-6">
+        {/* Top Navbar */}
+        <div className="flex justify-between items-center mb-6">
+          <div className="text-xl font-semibold">Overview</div>
+          <div className="flex items-center space-x-4">
+            
+            {/* Add avatar or icon here */}
+          </div>
         </div>
 
-        {/* Recent Activity Feed */}
-        <div className="bg-purple-600 text-white shadow-md rounded-lg p-4 col-span-2">
-          <h2 className="text-xl font-semibold">Recent Activity</h2>
-          <ul className="list-disc list-inside">
-            <li>Posted a new message on the forum</li>
-            <li>Liked a post from John Doe</li>
-            <li>Commented on your friend’s picture</li>
-          </ul>
+        {/* Dashboard Metrics */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Clients Card */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md flex justify-between items-center">
+            <div>
+              <h4 className="text-lg font-semibold">Events Attended</h4>
+              <div className="text-2xl font-bold">5</div>
+              <div className="text-green-500">+12%</div>
+            </div>
+            <div className="text-green-500">
+              <i className="fas fa-users text-3xl"></i> {/* Icon */}
+            </div>
+          </div>
+
+          {/* Sales Card */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md flex justify-between items-center">
+            <div>
+              <h4 className="text-lg font-semibold">Certificates Earned</h4>
+              <div className="text-2xl font-bold">4</div>
+              <div className="text-red-500">-12%</div>
+            </div>
+            <div className="text-blue-500">
+              <i className="fas fa-shopping-cart text-3xl"></i> {/* Icon */}
+            </div>
+          </div>
+
+          {/* Performance Card */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md flex justify-between items-center">
+            <div>
+              <h4 className="text-lg font-semibold">Registered Events</h4>
+              <div className="text-2xl font-bold">2</div>
+              <div className="text-yellow-500">+2%</div>
+            </div>
+            <div className="text-yellow-500">
+              <i className="fas fa-chart-line text-3xl"></i> {/* Icon */}
+            </div>
+          </div>
+
+          {/* Alerts Card */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md flex justify-between items-center">
+            <div>
+              <h4 className="text-lg font-semibold">Events Absent</h4>
+              <div className="text-2xl font-bold">1</div>
+              <div className="text-blue-500">1%</div>
+            </div>
+            <div className="text-yellow-500">
+              <i className="fas fa-bell text-3xl"></i> {/* Icon */}
+            </div>
+          </div>
         </div>
 
-        {/* Notifications */}
-        <div className="bg-purple-600 text-white shadow-md rounded-lg p-4">
-          <h2 className="text-xl font-semibold">Notifications</h2>
-          <ul className="list-disc list-inside">
-            <li>You have a new message from Jane.</li>
-            <li>New friend request from Bob.</li>
-          </ul>
-        </div>
+        {/* User Profile & Recent Activity */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+          {/* User Profile */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md flex items-center">
+            <img
+              className="w-16 h-16 rounded-full mr-4"
+              src="https://via.placeholder.com/150"
+              alt="User avatar"
+            />
+            <div>
+              <h4 className="text-xl font-semibold">Good to see you, Royston!</h4>
+              <div className="text-gray-500 dark:text-gray-400">Last login 12 mins ago from 127.0.0.1</div>
+              
+            </div>
+          </div>
 
-        {/* Quick Links */}
-        <div className="bg-purple-600 text-white shadow-md rounded-lg p-4">
-          <h2 className="text-xl font-semibold">Quick Links</h2>
-          <ul className="list-disc list-inside">
-            <li><a href="/create-post" className="text-yellow-200 hover:underline">Create a New Post</a></li>
-            <li><a href="/messages" className="text-yellow-200 hover:underline">View Messages</a></li>
-          </ul>
-        </div>
-
-        {/* Community Highlights */}
-        <div className="bg-purple-600 text-white shadow-md rounded-lg p-4 col-span-2">
-          <h2 className="text-xl font-semibold">Community Highlights</h2>
-          <ul className="list-disc list-inside">
-            <li>Check out the latest post from the community!</li>
-            <li>Join the discussion about upcoming events.</li>
-          </ul>
+          {/* Recent Activity */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h4 className="text-xl font-semibold mb-4">Recent Participations</h4>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src="https://via.placeholder.com/150"
+                    alt="Person"
+                  />
+                  <div className="ml-4">
+                    <h5 className="font-semibold">CodeClash</h5>
+                    <div className="text-gray-500 dark:text-gray-400 text-sm">Mar 3, 2023 @ hackerearth</div>
+                  </div>
+                </div>
+                
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src="https://via.placeholder.com/150"
+                    alt="Person"
+                  />
+                  <div className="ml-4">
+                    <h5 className="font-semibold">Dance With Me</h5>
+                    <div className="text-gray-500 dark:text-gray-400 text-sm">Dec 1, 2023 @ taaleem</div>
+                  </div>
+                </div>
+                
+              </div>
+              {/* Add more recent activity rows as needed */}
+            </div>
+          </div>
         </div>
       </div>
     </div>
