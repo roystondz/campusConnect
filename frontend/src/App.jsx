@@ -5,6 +5,8 @@ import Home from "../components/Home";
 import { Navbar } from '../components/Navbar';
 import Dashboard  from '../components/Dashboard';
 import TrailingCursor from '../components/TrailingCursor';
+import Events from  '../components/eventsData';
+
 
 export default function App() {
 
@@ -22,6 +24,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/events" element={<Events />} />
 
           {/* Catch-all route for 404 page */}
           <Route path="*" element={<div>404 Page Not Found</div>} />
