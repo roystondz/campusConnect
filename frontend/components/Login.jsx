@@ -1,8 +1,10 @@
 import {useState} from "react";
 /*import Signup from "./Signup"; */
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [inputData, setInputData] = useState('');
   const [inputPassword, setInputPassword] = useState('');
 
@@ -17,13 +19,18 @@ const Login = () => {
         e.preventDefault();
     
 
-    await fetch('http://localhost:3000/submit', {
+    const response = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username: inputData },{password:inputPassword}),  // Send data to the server
+        body: JSON.stringify({ username: inputData ,password:inputPassword}),  // Send data to the server
       });
+        const data = await response.json();
+        if(response.ok && data.success)
+        {
+          navigate("/Dashboard");
+        }
     };
 
 

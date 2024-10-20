@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation hook
+import { useLocation ,Link } from 'react-router-dom'; // Import useLocation hook
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,7 +101,7 @@ const Sidebar = () => {
                 href="/logout"
                 className="block p-3 rounded-lg bg-red-500 text-white hover:bg-red-600"
               >
-                Logout
+                <Link to="/Login">Logout</Link>
               </a>
             </li>
           </ul>
