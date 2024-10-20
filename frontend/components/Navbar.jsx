@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
+import {Link} from "react-router-dom";
 
 
 export const Navbar = () => {
@@ -46,7 +47,7 @@ export const Navbar = () => {
         <a href="/">
           <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
             <img src={logo} width="32" alt="" height="32" className="w-8" />
-            <span>CampusConnect</span>
+            <span><Link to="/">CampusConnect</Link></span>
           </span>
         </a>
 
