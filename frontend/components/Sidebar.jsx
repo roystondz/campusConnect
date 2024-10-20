@@ -35,28 +35,16 @@ const Sidebar = () => {
         {/* Sidebar Navigation */}
         <nav className="py-6 px-2">
           <ul className="space-y-3">
-            <li>
+          <li>
               <a
-                href="/dashboard"
+                href="/events"
                 className={`block p-3 rounded-lg ${
-                  isActive('/dashboard')
+                  isActive('/events')
                     ? 'bg-indigo-600 text-white'
                     : 'bg-gray-200 dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/profile"
-                className={`block p-3 rounded-lg ${
-                  isActive('/profile')
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600'
-                }`}
-              >
-                Profile
+                Events
               </a>
             </li>
             <li>
@@ -71,18 +59,7 @@ const Sidebar = () => {
                 Clubs
               </a>
             </li>
-            <li>
-              <a
-                href="/events"
-                className={`block p-3 rounded-lg ${
-                  isActive('/events')
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600'
-                }`}
-              >
-                Events
-              </a>
-            </li>
+            
             <li>
               <a
                 href="/notifications"
