@@ -9,7 +9,7 @@ import TrailingCursor from '../components/TrailingCursor';
 export default function App() {
 
   return (
-    <div className="relative min-h-screen transition-colors duration-300 bg-lightPurple-100 dark:bg-gray-800">
+    <div className="relative min-h-screen transition-colors duration-300 bg-lightPurple-100 dark:bg-gray-800 cursor-none">
       
       {/* Trailing Cursor */}
       <TrailingCursor /> {/* If you intend to have a trailing cursor across the app */}
