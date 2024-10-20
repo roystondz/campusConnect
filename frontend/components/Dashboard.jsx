@@ -57,7 +57,7 @@ const Dashboard = () => {
           {/* Alerts Card */}
           <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md flex justify-between items-center">
             <div>
-              <h4 className="text-lg font-semibold">Evenst Absent</h4>
+              <h4 className="text-lg font-semibold">Events Absent</h4>
               <div className="text-2xl font-bold">1</div>
               <div className="text-blue-500">1%</div>
             </div>
