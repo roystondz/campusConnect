@@ -20,7 +20,7 @@ const Signup = () => {
       alert("Passwords don't match");
       return;
     }
-    const response = await fetch('https://campus-connect-lake-theta.vercel.app/signup', {
+    const response = await fetch('http://localhost:3000/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
