@@ -17,7 +17,6 @@ export const Navbar = () => {
   // Update the navigation array to include paths
   const navigation = [
 
-
     { name: "Dashboard", path: "/Dashboard" },
     { name: "Our Clubs", path: "/club" },
 
