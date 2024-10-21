@@ -20,7 +20,7 @@ const Signup = () => {
       alert("Passwords don't match");
       return;
     }
-    const response = await fetch('http://localhost:3000/signup', {
+    const response = await fetch('http://localhost:9786/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
