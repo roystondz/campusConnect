@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const TrailingCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState(null); // Initialize as null
   const [isPointer, setIsPointer] = useState(false);
   const [trailingPositions, setTrailingPositions] = useState([]);
+  const [isVisible, setIsVisible] = useState(true); // Track if the cursor is visible
   const outerScale = 1.5; // Adjusted scale to be more subtle
 
   // Handle mouse movement
@@ -25,14 +26,33 @@ const TrailingCursor = () => {
     }
   }, []);
 
+  // Hide cursor when mouse leaves the window
+  const onMouseLeave = () => {
+    setIsVisible(false);
+  };
+
+  // Show cursor when mouse re-enters the window
+  const onMouseEnter = () => {
+    setIsVisible(true);
+  };
+
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseover', onMouseOver);
+    document.addEventListener('mouseleave', onMouseLeave);
+    document.addEventListener('mouseenter', onMouseEnter);
+
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseover', onMouseOver);
+      document.removeEventListener('mouseleave', onMouseLeave);
+      document.removeEventListener('mouseenter', onMouseEnter);
     };
   }, [onMouseOver]);
+
+  if (!isVisible || !position) {
+    return null; // Hide cursor when it's not visible or before movement
+  }
 
   return (
     <>

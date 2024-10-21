@@ -16,8 +16,10 @@ export const Navbar = () => {
     const isAuth =true;
   // Update the navigation array to include paths
   const navigation = [
-    isAuth ? { name: "Dashboard", path: "/Dashboard" }: " ",
-    { name: "Our Clubs", path: "/clubs" },
+
+    { name: "Dashboard", path: "/Dashboard" },
+    { name: "Our Clubs", path: "/club" },
+
     
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },
