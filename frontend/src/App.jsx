@@ -7,6 +7,8 @@ import Dashboard from '../components/Dashboard';
 import TrailingCursor from '../components/TrailingCursor';
 import Events from '../components/eventsData';
 import Clubs from '../components/Clubs';
+import Club from  '../components/club';
+
 
 export default function App() {
   return (
@@ -24,7 +26,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/events" element={<Events />} />
           <Route path="/clubs" element={<Clubs />} />
-
+          <Route path="/club" element={<Club />}/>
           {/* Catch-all route for 404 page */}
           <Route path="*" element={<div>404 Page Not Found</div>} />
         </Routes>
