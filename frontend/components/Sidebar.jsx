@@ -20,7 +20,7 @@ const Sidebar = () => {
     <div>
       {/* Sidebar Toggle Button */}
       <button
-        className="p-4 bg-blue-500 text-white fixed top-4 left-4 z-20 rounded-full shadow-lg lg:hidden"
+        className="p-4 bg-blue-500 text-white fixed top-13 left-4 z-20 rounded-full shadow-lg lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? 'Close' : 'Menu'}
@@ -30,7 +30,7 @@ const Sidebar = () => {
       <div
         className={`${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } fixed top-0 left-0 z-10 w-64 h-full bg-white dark:bg-gray-800 transition-transform duration-300 ease-in-out shadow-lg lg:relative lg:translate-x-0 lg:w-64`}
+        } fixed top-0 left-0 z-10 w-64 h-full bg-lightPurple-100 dark:bg-gray-800 transition-transform duration-300 ease-in-out shadow-lg lg:relative lg:translate-x-0 lg:w-64`}
       >
         {/* Sidebar Navigation */}
         <nav className="py-6 px-2">
