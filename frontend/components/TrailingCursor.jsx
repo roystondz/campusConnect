@@ -38,7 +38,7 @@ const TrailingCursor = () => {
     <>
       {/* Main cursor */}
       <div
-        className="fixed pointer-events-none z-50 rounded-full"
+        className="fixed pointer-events-none z-[9999] rounded-full"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
@@ -51,7 +51,7 @@ const TrailingCursor = () => {
 
       {/* Outer cursor */}
       <div
-        className="fixed pointer-events-none z-40 rounded-full transition-transform duration-300 ease-out"
+        className="fixed pointer-events-none z-[9998] rounded-full transition-transform duration-300 ease-out"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
@@ -66,7 +66,7 @@ const TrailingCursor = () => {
       {trailingPositions.map((pos, index) => (
         <div
           key={index}
-          className="fixed pointer-events-none z-30 rounded-full transition-opacity duration-500 ease-out"
+          className="fixed pointer-events-none z-[9997] rounded-full transition-opacity duration-500 ease-out"
           style={{
             left: `${pos.x}px`,
             top: `${pos.y}px`,
