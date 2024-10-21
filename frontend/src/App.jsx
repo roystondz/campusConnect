@@ -2,15 +2,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "../components/Login";
 import Signup from "../components/Signup";
 import Home from "../components/Home";
-import { Navbar } from '../components/Navbar';
+import { Navbar } from '../components/Navbar';  // Default import
 import Dashboard from '../components/Dashboard';
 import TrailingCursor from '../components/TrailingCursor';
 import Events from '../components/eventsData';
 import Clubs from '../components/Clubs';
-import Club from  '../components/club';
+import Club from '../components/club';
 import About from "../components/About_Us";
 import Error from "../components/Error";
-
+import FAQ from "../components/FAQ"
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
       <TrailingCursor />
 
       <Router>
-        <Navbar/>
+        <Navbar />  {/* Corrected Navbar */}
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />
@@ -28,8 +28,9 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/events" element={<Events />} />
           <Route path="/clubs" element={<Clubs />} />
-          <Route path="/club" element={<Club />}/>
+          <Route path="/club" element={<Club />} />
           <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
           {/* Catch-all route for 404 page */}
           <Route path="*" element={<Error />} />
         </Routes>
@@ -37,4 +38,3 @@ export default function App() {
     </div>
   );
 }
-

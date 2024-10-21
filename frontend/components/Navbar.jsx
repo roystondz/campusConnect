@@ -23,7 +23,7 @@ export const Navbar = () => {
     
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },
-    { name: "FAQs", path: "/faqs" },
+    { name: "FAQs", path: "/faq" },
   ];
 
   useEffect(() => {
