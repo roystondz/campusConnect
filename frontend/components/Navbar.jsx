@@ -13,9 +13,10 @@ export const Navbar = () => {
     return savedMode === "true"; // Convert string to boolean
   });
 
+    const isAuth =true;
   // Update the navigation array to include paths
   const navigation = [
-    { name: "Dashboard", path: "/Dashboard" },
+    isAuth ? { name: "Dashboard", path: "/Dashboard" }: " ",
     { name: "Our Clubs", path: "/clubs" },
     
     { name: "About Us", path: "/about" },
