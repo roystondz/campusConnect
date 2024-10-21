@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
+import { useState } from 'react';
+
 
 const Clubs = () => {
   const [selectedClub, setSelectedClub] = useState(null);
@@ -49,7 +49,7 @@ const Clubs = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-      <Sidebar />
+      
 
       <div className="flex-1 p-6">
         <h1 className="text-3xl font-bold mb-8">Clubs</h1>
@@ -103,17 +103,18 @@ const Clubs = () => {
                   />
                   {/* Previous Button */}
                   <button
-                    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+                    className="absolute top-1/2 left-2 transform -translate-y-1/2 "
                     onClick={prevPhoto}
                   >
                     ◀
                   </button>
                   {/* Next Button */}
                   <button
-                    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+                    className="absolute top-1/2 right-2 transform -translate-y-1/2 "
                     onClick={nextPhoto}
+                    title=">"
                   >
-                    ▶
+                     ▶
                   </button>
                 </div>
               )}

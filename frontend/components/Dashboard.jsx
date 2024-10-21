@@ -3,13 +3,13 @@ import Sidebar from '../components/Sidebar'; // Assuming you have a Sidebar comp
 
 const Dashboard = () => {
   return (
-    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <div className="flex min-h-screen bg-lightPurple-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
       <Sidebar /> {/* Sidebar component */}
 
       <div className="flex-1 p-6">
         {/* Top Navbar */}
         <div className="flex justify-between items-center mb-6">
-          <div className="text-xl font-semibold">Overview</div>
+          <div className="text-3xl font-semibold text-indigo-500 dark:text-gray-100">Overview</div>
           <div className="flex items-center space-x-4">
             
             {/* Add avatar or icon here */}
@@ -21,7 +21,7 @@ const Dashboard = () => {
           {/* Clients Card */}
           <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md flex justify-between items-center">
             <div>
-              <h4 className="text-lg font-semibold">Events Attended</h4>
+              <h4 className="text-lg font-semibold ">Events Attended</h4>
               <div className="text-2xl font-bold">5</div>
               <div className="text-green-500">+12%</div>
             </div>
