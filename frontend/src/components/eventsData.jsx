@@ -1,4 +1,4 @@
-import Sidebar from './sidebar';
+import Sidebar from '../components/Sidebar';
 import { Link } from 'react-router-dom';
 import { format, isBefore, isAfter, isEqual } from 'date-fns'; // date-fns for date comparison
 
