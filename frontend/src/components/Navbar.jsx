@@ -1,11 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; 
 import logo from "../assets/react.svg";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 export const Navbar = () => {
-
-  
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     // Get the initial value from localStorage or default to false
@@ -13,14 +10,10 @@ export const Navbar = () => {
     return savedMode === "true"; // Convert string to boolean
   });
 
-
   // Update the navigation array to include paths
   const navigation = [
-
-    { name: "Dashboard", path: "/Dashboard" },
+    { name: "Dashboard", path: "/dashboard" },
     { name: "Our Clubs", path: "/club" },
-
-    
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },
     { name: "FAQs", path: "/faq" },
@@ -36,9 +29,6 @@ export const Navbar = () => {
     }
   }, [darkMode]);
 
-  // Conditionally add "Dashboard" if the user is authenticated
-  
-
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
   };
@@ -47,23 +37,23 @@ export const Navbar = () => {
     <div className="w-full px-4">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
         {/* Logo */}
-        <a href="/">
+        <Link to="/">
           <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
             <img src={logo} width="32" alt="" height="32" className="w-8" />
-            <span><Link to="/">CampusConnect</Link></span>
+            <span>CampusConnect</span>
           </span>
-        </a>
+        </Link>
 
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <a
-                  href={menu.path} // Use the path from the menu object
+                <Link
+                  to={menu.path} // Use Link's 'to' prop instead of href
                   className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
                 >
-                  {menu.name} {/* Use the name from the menu object */}
-                </a>
+                  {menu.name}
+                </Link>
               </li>
             ))}
 
@@ -107,13 +97,13 @@ export const Navbar = () => {
         {isOpen && (
           <div className="flex flex-wrap w-full my-5 lg:hidden">
             {navigation.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.path} // Use the path from the menu object
+                to={item.path} // Use Link's 'to' prop instead of href
                 className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
               >
-                {item.name} {/* Use the name from the menu object */}
-              </a>
+                {item.name}
+              </Link>
             ))}
           </div>
         )}
