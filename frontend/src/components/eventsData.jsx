@@ -5,8 +5,6 @@ import { format, isBefore, isAfter, isEqual } from 'date-fns'; // date-fns for d
 
 
 
-import Sidebar from './Sidebar';  // Import the Sidebar component
-
 const eventsData = [
   {
     id: 1,
