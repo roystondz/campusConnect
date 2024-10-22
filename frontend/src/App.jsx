@@ -1,15 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from "../components/Login";
-import Signup from "../components/Signup";
-import Home from "../components/Home";
-import { Navbar } from '../components/Navbar';
-import Dashboard from '../components/Dashboard';
-import TrailingCursor from '../components/TrailingCursor';
-import Events from '../components/eventsData';
-import Clubs from '../components/Clubs';
-import Club from  '../components/club';
-import About from "../components/About_Us";
-import Error from "../components/Error";
+import Login from "../src/components/Login";
+import Signup from "../src/components/Signup";
+import Home from "../src/components/Home";
+import { Navbar } from '../src/components/Navbar';  // Default import
+import Dashboard from '../src/components/Dashboard';
+import TrailingCursor from '../src/components/TrailingCursor';
+import Events from '../src/components/eventsData';
+import Clubs from '../src/components/Clubs';
+import Club from '../src/components/club';
+import About from "../src/components/About_Us";
+import Error from "../src/components/Error";
+import FAQ from "../src/components/FAQ"
+import Contact from "../src/components/Contact_us";
+import EventDetail from '../src/components/EventDetail';
 
 
 export default function App() {
@@ -19,17 +22,20 @@ export default function App() {
       <TrailingCursor />
 
       <Router>
-        <Navbar/>
+        <Navbar />  {/* Corrected Navbar */}
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+        
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/events" element={<Events />} />
           <Route path="/clubs" element={<Clubs />} />
-          <Route path="/club" element={<Club />}/>
+          <Route path="/club" element={<Club />} />
           <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/event/:id" element={<EventDetail />} />
           {/* Catch-all route for 404 page */}
           <Route path="*" element={<Error />} />
         </Routes>
@@ -37,4 +43,3 @@ export default function App() {
     </div>
   );
 }
-

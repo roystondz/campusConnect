@@ -39,22 +39,22 @@ const EventList = () => {
 
       {/* Main Content - Events */}
       <div className="flex-1 p-8 bg-gray-100 dark:bg-gray-800">
-        <h1 className="text-3xl font-bold mb-6 dark:text-white">Upcoming Events</h1>
+        <h1 className="mb-6 text-3xl font-bold dark:text-white">Upcoming Events</h1>
         
         {/* Event Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {eventsData.length > 0 ? (
             eventsData.map((event) => (
-              <div key={event.id} className="bg-white dark:bg-gray-700 shadow rounded-lg overflow-hidden">
-                <img src={event.image} alt={event.title} className="w-full h-32 object-cover" />
+              <div key={event.id} className="overflow-hidden bg-white rounded-lg shadow dark:bg-gray-700">
+                <img src={event.image} alt={event.title} className="object-cover w-full h-32" />
                 <div className="p-4">
                   <h3 className="text-lg font-semibold dark:text-white">{event.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mt-2">{event.description}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  <p className="mt-2 text-gray-700 dark:text-gray-300">{event.description}</p>
+                  <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                     {event.date} | {event.time}
                   </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{event.location}</p>
-                  <button className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{event.location}</p>
+                  <button className="px-4 py-2 mt-4 text-white bg-indigo-600 rounded hover:bg-indigo-700">
                     Register
                   </button>
                 </div>
