@@ -1,4 +1,4 @@
-import img from '../assets/hero.png'
+import img from '../assets/react.svg'
 import {Link} from "react-router-dom";
 
 const Home = () => {
