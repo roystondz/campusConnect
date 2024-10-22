@@ -1,4 +1,4 @@
-import Sidebar from '../components/sidebar'; // Assuming you have a Sidebar component
+import Sidebar from '../components/Sidebar'; // Assuming you have a Sidebar component
 
 const Dashboard = () => {
   return (
