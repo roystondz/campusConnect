@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation ,Link } from 'react-router-dom'; // Import useLocation hook
+import { useLocation, Link } from 'react-router-dom'; // Import useLocation and Link
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +35,9 @@ const Sidebar = () => {
         {/* Sidebar Navigation */}
         <nav className="py-6 px-2">
           <ul className="space-y-3">
-          <li>
-              <a
-                href="/events"
+            <li>
+              <Link
+                to="/events"
                 className={`block p-3 rounded-lg ${
                   isActive('/events')
                     ? 'bg-indigo-600 text-white'
@@ -45,11 +45,11 @@ const Sidebar = () => {
                 }`}
               >
                 Events
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/clubs"
+              <Link
+                to="/clubs"
                 className={`block p-3 rounded-lg ${
                   isActive('/clubs')
                     ? 'bg-indigo-600 text-white'
@@ -57,12 +57,11 @@ const Sidebar = () => {
                 }`}
               >
                 Clubs
-              </a>
+              </Link>
             </li>
-            
             <li>
-              <a
-                href="/notifications"
+              <Link
+                to="/notifications"
                 className={`block p-3 rounded-lg ${
                   isActive('/notifications')
                     ? 'bg-indigo-600 text-white'
@@ -70,11 +69,11 @@ const Sidebar = () => {
                 }`}
               >
                 Notifications
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/certificates"
+              <Link
+                to="/certificates"
                 className={`block p-3 rounded-lg ${
                   isActive('/certificates')
                     ? 'bg-indigo-600 text-white'
@@ -82,11 +81,11 @@ const Sidebar = () => {
                 }`}
               >
                 Certificates
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/settings"
+              <Link
+                to="/settings"
                 className={`block p-3 rounded-lg ${
                   isActive('/settings')
                     ? 'bg-indigo-600 text-white'
@@ -94,15 +93,15 @@ const Sidebar = () => {
                 }`}
               >
                 Settings
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="block p-3 rounded-lg bg-red-500 text-white hover:bg-red-600"
               >
-                <Link to="/Login">Logout</Link>
-              </a>
+                Logout
+              </Link>
             </li>
           </ul>
         </nav>
