@@ -11,6 +11,8 @@ import Club from '../components/club';
 import About from "../components/About_Us";
 import Error from "../components/Error";
 import FAQ from "../components/FAQ"
+import Contact from "../components/Contact_us";
+
 
 export default function App() {
   return (
@@ -31,6 +33,7 @@ export default function App() {
           <Route path="/club" element={<Club />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
           {/* Catch-all route for 404 page */}
           <Route path="*" element={<Error />} />
         </Routes>
