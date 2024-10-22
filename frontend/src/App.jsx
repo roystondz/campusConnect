@@ -1,18 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from "../components/Login";
-import Signup from "../components/Signup";
-import Home from "../components/Home";
-import { Navbar } from '../components/Navbar';  // Default import
-import Dashboard from '../components/Dashboard';
-import TrailingCursor from '../components/TrailingCursor';
-import Events from '../components/eventsData';
-import Clubs from '../components/Clubs';
-import Club from '../components/club';
-import About from "../components/About_Us";
-import Error from "../components/Error";
-import FAQ from "../components/FAQ"
-import Contact from "../components/Contact_us";
-import EventDetail from '../components/EventDetail';
+import Login from "../src/components/Login";
+import Signup from "../src/components/Signup";
+import Home from "../src/components/Home";
+import { Navbar } from '../src/components/Navbar';  // Default import
+import Dashboard from '../src/components/Dashboard';
+import TrailingCursor from '../src/components/TrailingCursor';
+import Events from '../src/components/eventsData';
+import Clubs from '../src/components/Clubs';
+import Club from '../src/components/club';
+import About from "../src/components/About_Us";
+import Error from "../src/components/Error";
+import FAQ from "../src/components/FAQ"
+import Contact from "../src/components/Contact_us";
+import EventDetail from '../src/components/EventDetail';
 
 
 export default function App() {
