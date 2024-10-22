@@ -22,7 +22,7 @@ const Home = () => {
                 target="_blank"
                 rel="noopener"
                 className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md hover:text-purple-950">
-                <Link to="/Signup" >Register Now</Link>
+                <Link to="/signup" >Register Now</Link>
               </a>
               <a
                 href=""
@@ -39,7 +39,7 @@ const Home = () => {
                   <title>Login</title>
 
                 </svg>
-                <span className='hover:text-purple-500'> <Link to="/Login">Login if you already have an account</Link></span>
+                <span className='hover:text-purple-500'> <Link to="/login">Login if you already have an account</Link></span>
               </a>
             </div>
           </div>
