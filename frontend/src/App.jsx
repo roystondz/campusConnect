@@ -13,6 +13,9 @@ import Error from "../src/components/Error";
 import FAQ from "../src/components/FAQ"
 import Contact from "../src/components/Contact_us";
 import EventDetail from '../src/components/EventDetail';
+import Dashboard_ad from  '../src/components/Dashboard_administrative';
+import Settings from  '../src/components/Settings';
+
 
 
 export default function App() {
@@ -36,6 +39,8 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/event/:id" element={<EventDetail />} />
+          <Route path="/dashboard_ad" element={<Dashboard_ad />} />
+          <Route path="/settings" element={<Settings />} />
           {/* Catch-all route for 404 page */}
           <Route path="*" element={<Error />} />
         </Routes>
