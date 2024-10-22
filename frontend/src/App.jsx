@@ -12,6 +12,7 @@ import About from "../components/About_Us";
 import Error from "../components/Error";
 import FAQ from "../components/FAQ"
 import Contact from "../components/Contact_us";
+import EventDetail from '../components/EventDetail';
 
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/event/:id" element={<EventDetail />} />
           {/* Catch-all route for 404 page */}
           <Route path="*" element={<Error />} />
         </Routes>
