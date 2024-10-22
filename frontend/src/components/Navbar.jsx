@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"; 
-import logo from "../assets/react.svg";
+import logo from "../assets/favicon-final.png";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 export const Navbar = () => {
