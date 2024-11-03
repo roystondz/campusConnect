@@ -19,24 +19,29 @@ const Login = () => {
         e.preventDefault();
     
 
-    const response = await fetch('http://localhost:9786/login', {
+    const response = await fetch('http://localhost:3000/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username: inputData ,password:inputPassword}),  // Send data to the server
+        body: JSON.stringify({ email: inputData ,password:inputPassword}),  // Send data to the server
       });
         const data = await response.json();
         if(response.ok && data.success)
+
         {
-          navigate("/Dashboard");
+          const dataToPass={
+            name:data.name,
+            usn:data.USN
+          }
+          navigate("/Dashboard",{state:dataToPass});
         }
     };
 
 
     return (
       <div className="flex items-start justify-center h-screen bg-purple-100 dark:bg-gray-800">
-        <div className="p-8 bg-white rounded-lg shadow-md dark:bg-gray-700 w-96 mt-16"> {/* Adjusted margin-top */}
+        <div className="p-8 mt-16 bg-white rounded-lg shadow-md dark:bg-gray-700 w-96"> {/* Adjusted margin-top */}
           <h2 className="mb-4 text-2xl font-bold text-center text-gray-900 dark:text-white">Welcome back</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input 
@@ -54,7 +59,7 @@ const Login = () => {
               className="w-full px-3 py-2 border rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-500"
             />
             <div className="text-right">
-              <a href="" className="text-xs sm:text-sm font-medium text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300">Forgot Password?</a>
+              <a href="" className="text-xs font-medium text-purple-500 sm:text-sm hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300">Forgot Password?</a>
             </div>
             <button 
               type="submit" 

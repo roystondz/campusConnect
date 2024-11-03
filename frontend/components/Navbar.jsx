@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import {Link} from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 
 export const Navbar = () => {
@@ -16,7 +17,7 @@ export const Navbar = () => {
   // Update the navigation array to include paths
   const navigation = [
     { name: "Dashboard", path: "/Dashboard" },
-    { name: "Our Clubs", path: "/club" },
+    { name: "Our Clubs", path: "/Clubs" },
     
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Link, useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -8,11 +8,19 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [usn, setUsn] = useState('');
 
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
+  const handleFirstNameChange = (e) => setFirstName(e.target.value);
+  const handleLastNameChange = (e) => setLastName(e.target.value);
+  const handlePhoneNumberChange = (e) => setPhoneNumber(e.target.value);
+  const handleUsnChange = (e) => setUsn(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,28 +28,82 @@ const Signup = () => {
       alert("Passwords don't match");
       return;
     }
-    const response = await fetch('http://localhost:9786/signup', {
+    const response = await fetch('http://localhost:3000/api/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+        fname: firstName,
+        lname: lastName,
+        pno: phoneNumber,
+        usn,
+      }),
     });
     const data = await response.json();
     if (response.ok && data.success) {
-      navigate('/Dashboard'); // Correct spelling from 'Dasboard' to 'Dashboard'
+      navigate('/Dashboard');
     } else {
-      alert(data.error || "Signup failed"); // Display error message from response
-}
+      alert(data.error || "Signup failed");
+    }
   };
 
-    
-
   return (
-    <div className="flex items-start justify-center min-h-screen pt-12 bg-purple-100 dark:bg-gray-800"> {/* Added padding-top */}
+    <div className="flex items-start justify-center min-h-screen pt-12 bg-purple-100 dark:bg-gray-800">
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md dark:bg-gray-700">
         <h2 className="mb-6 text-2xl font-bold text-center text-gray-900 dark:text-white">Create an Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="firstName" className="sr-only">First Name</label>
+            <input 
+              id="firstName"
+              type="text" 
+              value={firstName} 
+              onChange={handleFirstNameChange} 
+              placeholder="First Name" 
+              className="w-full px-3 py-2 text-sm border rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="lastName" className="sr-only">Last Name</label>
+            <input 
+              id="lastName"
+              type="text" 
+              value={lastName} 
+              onChange={handleLastNameChange} 
+              placeholder="Last Name" 
+              className="w-full px-3 py-2 text-sm border rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="phoneNumber" className="sr-only">Phone Number</label>
+            <input 
+              id="phoneNumber"
+              type="text" 
+              value={phoneNumber} 
+              onChange={handlePhoneNumberChange} 
+              placeholder="Phone Number" 
+              className="w-full px-3 py-2 text-sm border rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="usn" className="sr-only">USN</label>
+            <input 
+              id="usn"
+              type="text" 
+              value={usn} 
+              onChange={handleUsnChange} 
+              placeholder="USN" 
+              className="w-full px-3 py-2 text-sm border rounded-md dark:bg-gray-600 dark:text-white dark:border-gray-500"
+              required
+            />
+          </div>
           <div>
             <label htmlFor="username" className="sr-only">Username</label>
             <input 
@@ -106,8 +168,6 @@ const Signup = () => {
       </div>
     </div>
   );
-  
-  
 };
 
 export default Signup;

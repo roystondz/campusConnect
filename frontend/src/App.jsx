@@ -10,6 +10,7 @@ import Clubs from '../components/Clubs';
 import Club from  '../components/club';
 import About from "../components/About_Us";
 import Error from "../components/Error";
+import ProtectedRoutes from '../utils/protectedRoutes';
 
 
 export default function App() {
@@ -21,16 +22,21 @@ export default function App() {
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          
           <Route path="/" element={<Home />} />
+          
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route element={<ProtectedRoutes/>}>
+
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/events" element={<Events />} />
           <Route path="/clubs" element={<Clubs />} />
           <Route path="/club" element={<Club />}/>
           <Route path="/about" element={<About />} />
           {/* Catch-all route for 404 page */}
+          </Route>
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
