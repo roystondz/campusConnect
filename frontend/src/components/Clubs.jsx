@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-import Sidebar from './sidebar'; 
+import Sidebar from './Sidebar'; 
 const Settings = () => {
   const [formData, setFormData] = useState({
     username: 'johndoe123',
