@@ -45,7 +45,11 @@ const Signup = () => {
     });
     const data = await response.json();
     if (response.ok && data.success) {
-      navigate('/Dashboard');
+      const dataToPass={
+        name:data.name,
+
+      }
+      navigate('/Dashboard',{state:dataToPass});
     } else {
       alert(data.error || "Signup failed");
     }
