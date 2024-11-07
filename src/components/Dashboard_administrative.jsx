@@ -50,52 +50,16 @@ const Dashboard = () => {
         {/* Dashboard Metrics */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {/* Total Events Card */}
-          <div className="flex items-center justify-between p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <div>
-              <h4 className="text-lg font-semibold">Total Events Created</h4>
-              <div className="text-2xl font-bold">12</div>
-              <div className="text-green-500">+5%</div>
-            </div>
-            <div className="text-green-500">
-              <i className="text-3xl fas fa-calendar-alt"></i> {/* Icon */}
-            </div>
-          </div>
+          
 
           {/* Participants Card */}
-          <div className="flex items-center justify-between p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <div>
-              <h4 className="text-lg font-semibold">Total Participants</h4>
-              <div className="text-2xl font-bold">150</div>
-              <div className="text-blue-500">+10%</div>
-            </div>
-            <div className="text-blue-500">
-              <i className="text-3xl fas fa-users"></i> {/* Icon */}
-            </div>
-          </div>
+          
 
           {/* Feedback Score */}
-          <div className="flex items-center justify-between p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <div>
-              <h4 className="text-lg font-semibold">Feedback Score</h4>
-              <div className="text-2xl font-bold">4.5/5</div>
-              <div className="text-yellow-500">+1.2%</div>
-            </div>
-            <div className="text-yellow-500">
-              <i className="text-3xl fas fa-star"></i> {/* Icon */}
-            </div>
-          </div>
+          
 
           {/* Upcoming Events */}
-          <div className="flex items-center justify-between p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <div>
-              <h4 className="text-lg font-semibold">Upcoming Events</h4>
-              <div className="text-2xl font-bold">3</div>
-              <div className="text-red-500">-1 event</div>
-            </div>
-            <div className="text-red-500">
-              <i className="text-3xl fas fa-bell"></i> {/* Icon */}
-            </div>
-          </div>
+          
           <DashboardMetric title="Total Events" value={events.length} icon="calendar-alt" color="green" />
           <DashboardMetric
             title="Total Members in the Club"
